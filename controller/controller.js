@@ -20,7 +20,7 @@ const registerUser = async(req,res) => {
         res.status(200).json({data:newUser})
     } catch (error) {
         console.log("signup error", error)
-        res.status(500).json({error:'User could not be created'})
+        res.status(500).json({error:'User was not be created'})
     }
 }
 
@@ -62,7 +62,7 @@ const addTodo = async(req,res) => {
 const getTodo = async(req,res) => {
     const findTodo = await todo.find()
     if(!findTodo){
-        return res.status(400).json({message:"No task found"});
+        return res.status(400).json({message:"Task not found"});
     }
     return res.status(200).json(findTodo)
 }
